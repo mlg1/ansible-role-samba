@@ -136,6 +136,12 @@
 {% if share.allow_hosts is defined %}
   allow hosts = {{ share.allow_hosts }}
 {% endif %}
+{% if share.oplocks is defined %}
+  oplocks = {{ share.oplocks }}
+{% endif %}
+{% if share.level2_oplocks is defined %}
+  level2 oplocks = {{ share.level2_oplocks }}
+{% endif %}
   create mode = {{ share.create_mode|default('0664') }}
   force create mode = {{ share.force_create_mode|default('0664') }}
   directory mode = {{ share.directory_mode|default('0775') }}
